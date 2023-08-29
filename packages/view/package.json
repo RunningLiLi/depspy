@@ -34,17 +34,18 @@
   "license": "ISC",
   "devDependencies": {
     "@iconify-json/carbon": "^1.1.20",
+    "@types/d3": "^7.4.0",
     "@types/react": "^18.2.18",
     "@types/react-dom": "^18.2.7",
     "@unocss/preset-attributify": "^0.55.2",
     "@unocss/transformer-variant-group": "^0.55.2",
     "sass": "^1.65.1",
     "tsup": "^7.1.0",
-    "unocss": "^0.55.2"
+    "unocss": "^0.55.2",
+    "vite": "^4.4.9"
   },
   "dependencies": {
     "@dep-spy/core": "workspace:^",
-    "@types/d3": "^7.4.0",
     "@vitejs/plugin-react": "^4.0.4",
     "d3": "^7.8.5",
     "i18next": "^23.4.4",
@@ -57,7 +58,6 @@
     "react-router-dom": "^6.14.2",
     "react-transition-group": "^4.4.5",
     "save-svg-as-png": "^1.4.17",
-    "vite": "^4.4.9",
     "zustand": "^4.4.0"
   },
   "gitHead": "50c073c23fc0eed9ed09baaa47244288326bc3d8"
