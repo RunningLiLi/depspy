@@ -28,6 +28,7 @@ export default function AnalyzePage() {
     setGraphRes,
     rootLoading,
     setRootLoading,
+    setDepth,
     setSizeLoading,
   } = useStore((state) => state, shallow);
   const svg = useRef(null);
@@ -73,7 +74,14 @@ export default function AnalyzePage() {
         className="fixed flex left-2rem bottom-2rem gap-4 h-2rem"
         flex="items-end"
       >
-        <Depth></Depth>
+        <Depth
+          depth={depth}
+          rootLoading={rootLoading}
+          onDepthChange={(newDepth) => {
+            setRootLoading(true);
+            setDepth(newDepth);
+          }}
+        ></Depth>
         <Export
           svgRef={svg}
           width={innerWidth}

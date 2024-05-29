@@ -1,13 +1,13 @@
 // import { useState } from "react";
-import { useStore } from "@/contexts";
-import { shallow } from "zustand/shallow";
 import useLanguage from "@/i18n/hooks/useLanguage";
 import Loading from "@/components/Loading";
-export default function Depth() {
-  const { depth, rootLoading, setRootLoading, setDepth } = useStore(
-    (state) => state,
-    shallow,
-  );
+interface IProps {
+  depth: number;
+  rootLoading: boolean;
+  onDepthChange: (depth: number) => void;
+}
+export default function Depth(props: IProps) {
+  const { depth, rootLoading, onDepthChange } = props;
   const { t } = useLanguage();
   return (
     <section
@@ -25,8 +25,7 @@ export default function Depth() {
           min={2}
           defaultValue={depth}
           onBlur={(e) => {
-            setDepth(parseInt(e.target.value));
-            setRootLoading(true);
+            onDepthChange(parseInt(e.target.value));
           }}
           className="p-1 h-2rem w-5rem outline-primary-base text-center text-text bg-bg-container"
           border="solid 2 rd-0.5rem primary-border-hover hover:primary-hover"

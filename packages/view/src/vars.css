@@ -1,6 +1,6 @@
 .app[data-theme="light"] {
   --color-primary-bg: #e6e2f2;
-  --color-primary-bg-hover: #cabef3;
+  --color-primary-bg-hover: #eee;
   --color-primary-border: #a992f6;
   --color-primary-border-hover: #3a0fc6;
   --color-primary-hover: #7550f1;
@@ -24,8 +24,8 @@
 }
 
 .app[data-theme="dark"] {
-  --color-primary-bg: #130542;
-  --color-primary-bg-hover: #1d0763;
+  --color-primary-bg: #2d2d2e;
+  --color-primary-bg-hover: #505050;
   --color-primary-border: #260a84;
   --color-primary-border-hover: #8f71f3;
   --color-primary-hover: #8463f1;

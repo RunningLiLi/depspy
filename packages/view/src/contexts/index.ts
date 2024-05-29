@@ -9,7 +9,7 @@ import { combineRes } from "./combineRes";
 
 export const useStore = createWithEqualityFn<Store>()(
   subscribeWithSelector((set) => ({
-    theme: localStorage.getItem("theme") || "dark",
+    theme: (localStorage.getItem("theme") as "dark" | "light") || "dark",
     language: localStorage.getItem("language") || "en",
     info: "",
     sizeTree: false,

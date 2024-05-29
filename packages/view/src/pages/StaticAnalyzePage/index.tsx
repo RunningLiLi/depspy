@@ -1,3 +1,4 @@
+import Depth from "@/components/Depth";
 import GridBackground from "@/components/GridBack";
 import { GithubIcon, LanguageIcon, ThemeIcon } from "@/components/Icon";
 import Skeleton from "@/components/Skeleton";
@@ -5,10 +6,10 @@ import StaticTree from "@/components/StaticTree";
 import { useStaticStore } from "@/contexts";
 
 export default function StaticAnalyzePage() {
-  const { staticRootLoading, staticRoot } = useStaticStore();
-  if (staticRootLoading && !staticRoot) {
-    return <Skeleton></Skeleton>;
-  }
+  // const { staticRootLoading, staticRoot } = useStaticStore();
+  // if (staticRootLoading && !staticRoot) {
+  //   return <Skeleton></Skeleton>;
+  // }
   return (
     <main className="w-screen h-screen overflow-hidden">
       <div className="fixed">
@@ -22,6 +23,10 @@ export default function StaticAnalyzePage() {
         <ThemeIcon />
         <GithubIcon />
       </div>
+      <section
+        className="fixed flex left-2rem bottom-2rem gap-4 h-2rem"
+        flex="items-end"
+      ></section>
     </main>
   );
 }

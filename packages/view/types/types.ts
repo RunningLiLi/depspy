@@ -19,8 +19,9 @@ export interface generateGraphRes {
   depth: number;
 }
 
+export type Theme = "dark" | "light";
 export interface Store {
-  theme: string;
+  theme: Theme;
   language: string;
   root: Node;
   sizeRoot: Node;

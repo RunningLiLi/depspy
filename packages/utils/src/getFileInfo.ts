@@ -47,7 +47,7 @@ export default function getFileInfo(path: string, baseDir: string = cwd) {
       path,
       resolvedPath: extra,
       baseDir: findParentDirectory(extra),
-      ...getCodeInfo(""),
+      ...getCodeInfo(""), //生成空结构
     };
   } else if (pathType === PATH_TYPE.ALIAS) {
     resolvedPath = extra;
@@ -56,7 +56,7 @@ export default function getFileInfo(path: string, baseDir: string = cwd) {
       path,
       resolvedPath: "",
       baseDir: "",
-      ...getCodeInfo(""),
+      ...getCodeInfo(""), //生成空结构
     };
   }
 
