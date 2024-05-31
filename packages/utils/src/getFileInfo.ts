@@ -18,11 +18,15 @@ let matchPath;
 //避免浏览器引入报错
 if (!inBrowser) {
   cwd = process.cwd();
-  tsConfig = tsPaths.loadConfig(cwd);
-  matchPath = tsPaths.createMatchPath(
-    tsConfig["absoluteBaseUrl"],
-    tsConfig["paths"],
-  );
+  try {
+    tsConfig = tsPaths.loadConfig(cwd);
+    matchPath = tsPaths.createMatchPath(
+      tsConfig["absoluteBaseUrl"],
+      tsConfig["paths"],
+    );
+  } catch (e) {
+    console.warn("tsconfig.json not found , alias search unavailable !");
+  }
 }
 //兼容不同类型的path并返回关键信息
 export default function getFileInfo(path: string, baseDir: string = cwd) {
@@ -46,6 +50,7 @@ export default function getFileInfo(path: string, baseDir: string = cwd) {
     return {
       path,
       resolvedPath: extra,
+      pathType: pathType,
       baseDir: findParentDirectory(extra),
       ...getCodeInfo(""), //生成空结构
     };
@@ -54,6 +59,7 @@ export default function getFileInfo(path: string, baseDir: string = cwd) {
   } else if (pathType === PATH_TYPE.UNKNOWN) {
     return {
       path,
+      pathType: pathType,
       resolvedPath: "",
       baseDir: "",
       ...getCodeInfo(""), //生成空结构
@@ -66,6 +72,7 @@ export default function getFileInfo(path: string, baseDir: string = cwd) {
     return {
       path,
       resolvedPath,
+      pathType: pathType,
       baseDir: findParentDirectory(resolvedPath),
       ...getCodeInfo(code),
     };

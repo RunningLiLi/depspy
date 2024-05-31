@@ -42,3 +42,8 @@ function IntroText(intro: string, value: string) {
   </div>
   `;
 }
+function Button(intro: string, value: string) {
+  return `
+  <div class="flex justify-items-start w-full">
+  `;
+}

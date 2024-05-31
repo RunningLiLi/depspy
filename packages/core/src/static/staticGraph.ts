@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import { getFileInfo } from "@dep-spy/utils";
+import type { PATH_TYPE } from "@dep-spy/utils";
 import { Config, StaticNode } from "../type";
 import path from "path";
 
@@ -27,14 +28,16 @@ export class StaticGraph {
         dependencies: {},
       };
     }
-    const { imports, path, resolvedPath, baseDir } = getFileInfo(
+    const { imports, path, resolvedPath, baseDir, pathType } = getFileInfo(
       entry || this.entry,
       this.baseDirs.at(-1),
     );
 
     const curNode = new GraphNode({
+      pathType,
       path,
       resolvedPath,
+
       imports,
       exports: [],
       dependencies: {},
@@ -81,12 +84,14 @@ export class StaticGraph {
   }
 }
 class GraphNode implements StaticNode {
+  pathType: PATH_TYPE;
   path: string = "";
   resolvedPath: string = "";
   imports: string[] = [];
   exports: string[] = [];
   dependencies: Record<string, StaticNode> = {};
   constructor(fields: {
+    pathType: PATH_TYPE;
     path: string;
     resolvedPath: string;
     imports: string[];
