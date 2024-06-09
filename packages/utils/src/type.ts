@@ -21,11 +21,11 @@ export interface MODULE_CONFIG {
 }
 
 export enum PATH_TYPE {
-  RESOLVE = "RESOLVE",
-  RELATIVE = "RELATIVE",
-  BARE = "BARE",
-  ALIAS = "ALIAS",
-  UNKNOWN = "UNKNOWN",
+  RESOLVE,
+  RELATIVE,
+  BARE,
+  ALIAS,
+  UNKNOWN,
 }
 
 export interface CODE_INFO {
@@ -49,4 +49,7 @@ export interface TS_CONFIG {
     paths?: ALIAS_CONFIG;
   };
 }
+
 export type ALIAS_CONFIG = Record<string, string | string[]>;
+
+export type POOL_TASK = [info?: string, config?: MODULE_CONFIG];
