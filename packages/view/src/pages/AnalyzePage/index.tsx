@@ -7,7 +7,7 @@ import { Export } from "@/components/Export";
 import { useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import { shallow } from "zustand/shallow";
-import { GithubIcon, LanguageIcon, ThemeIcon } from "@/components/icon";
+import { GithubIcon, LanguageIcon, ThemeIcon } from "@/components/Icon";
 import Skeleton from "@/components/Skeleton";
 import FirstTreeMap from "@/components/FirstTreeMap";
 import SizeTree from "@/components/SizeTree";
