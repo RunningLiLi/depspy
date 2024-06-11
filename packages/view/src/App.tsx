@@ -9,6 +9,7 @@ import { useStore } from "@/contexts";
 import useLanguage from "./i18n/hooks/useLanguage";
 import { useEffect } from "react";
 import StaticAnalyzePage from "./pages/StaticAnalyzePage";
+import { Theme } from "~/types";
 
 const routeElement = [
   { path: "search", element: <SearchPage /> },
@@ -32,7 +33,9 @@ function App() {
   const { initLanguage } = useLanguage();
 
   window.addEventListener("storage", () => {
-    useStore.setState({ theme: localStorage.getItem("theme") || "light" });
+    useStore.setState({
+      theme: (localStorage.getItem("theme") as Theme) || "light",
+    });
     initLanguage();
   });
 

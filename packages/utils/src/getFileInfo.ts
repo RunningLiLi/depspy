@@ -45,6 +45,7 @@ export default function getFileInfo(path: string, baseDir: string = cwd) {
     //三方包就此截❌（这里暂时是文件夹路径）
     return {
       path,
+      pathType,
       resolvedPath: extra,
       baseDir: findParentDirectory(extra),
       ...getCodeInfo(""),
@@ -54,6 +55,7 @@ export default function getFileInfo(path: string, baseDir: string = cwd) {
   } else if (pathType === PATH_TYPE.UNKNOWN) {
     return {
       path,
+      pathType,
       resolvedPath: "",
       baseDir: "",
       ...getCodeInfo(""),
@@ -65,6 +67,7 @@ export default function getFileInfo(path: string, baseDir: string = cwd) {
     const code = fs.readFileSync(resolvedPath).toString();
     return {
       path,
+      pathType,
       resolvedPath,
       baseDir: findParentDirectory(resolvedPath),
       ...getCodeInfo(code),

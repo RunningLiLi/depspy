@@ -21,11 +21,11 @@ export interface MODULE_CONFIG {
 }
 
 export enum PATH_TYPE {
-  RESOLVE,
-  RELATIVE,
-  BARE,
-  ALIAS,
-  UNKNOWN,
+  RESOLVE = "RESOLVE",
+  RELATIVE = "RELATIVE",
+  BARE = "BARE",
+  ALIAS = "ALIAS",
+  UNKNOWN = "UNKNOWN",
 }
 
 export interface CODE_INFO {

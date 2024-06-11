@@ -63,9 +63,10 @@ cli
     const graph = generateGraph("", options);
 
     const spinner = ora(blue("🕵️ 正在潜入\n")).start();
-    await graph.outputToFile();
+    await graph.ensureGraph();
     spinner.stop();
 
+    graph.outputToFile();
     console.log(green(`破解完成,耗时 ${yellow(Date.now() - startTime)} ms`));
 
     // 如果开启 ui，则启动可视化界面
