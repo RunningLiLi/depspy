@@ -1,0 +1,49 @@
+{
+  "name": "@dep-spy/core",
+  "version": "3.2.7",
+  "description": "",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./vite-plugin-dep-spy": {
+      "import": "./dist/static/vitePluginDepSpy.mjs",
+      "require": "./dist/static/vitePluginDepSpy.js",
+      "types": "./dist/static/vitePluginDepSpy.d.ts"
+    },
+    "./webpack-plugin-dep-spy": {
+      "import": "./dist/static/webpackPluginDepSpy.mjs",
+      "require": "./dist/static/webpackPluginDepSpy.js",
+      "types": "./dist/static/webpackPluginDepSpy.d.ts"
+    }
+  },
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^4.32.1",
+    "tsup": "^7.1.0",
+    "vite": "^4.0.0"
+  },
+  "peerDependencies": {
+    "vite": "^4.0.0",
+    "webpack": "^4.5.1"
+  },
+  "dependencies": {
+    "@dep-spy/utils": "workspace:^",
+    "@vue/compiler-dom": "^3.5.13",
+    "acorn-walk": "^8.3.4",
+    "typescript": "^5.7.3"
+  },
+  "gitHead": "50c073c23fc0eed9ed09baaa47244288326bc3d8"
+}

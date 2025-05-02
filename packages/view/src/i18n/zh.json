@@ -1,0 +1,93 @@
+{
+  "mode": {
+    "language": "中文",
+    "theme": {
+      "light": "明亮模式",
+      "dark": "暗黑模式"
+    }
+  },
+  "search": {
+    "history": "历史记录",
+    "findDep": "搜索依赖",
+    "searchDeps": "输入依赖名",
+    "upload": "上传包文件",
+    "drag": "点击或拖动文件到此处进行上传",
+    "format": "只接受上传*.json文件"
+  },
+  "section": {
+    "title": "依赖间谍",
+    "depth": "深度",
+    "export": "导出",
+    "fileType": "文件类型",
+    "select": "选择",
+    "maxDepth": "最大深度",
+    "expand": "展开",
+    "collapse": "折叠",
+    "dependences": "-依赖分析",
+    "alertexp": "请先选择导出文件类型!",
+    "jsonexp": "JSON数据为空!",
+    "rectTree": "矩形树图",
+    "plainTree": "树图"
+  },
+  "aside": {
+    "search": {
+      "title": "搜索",
+      "find": "搜索依赖",
+      "results": "相似搜索结果",
+      "mainpage": "返回主页"
+    },
+    "list": {
+      "title": "列表",
+      "selected": "选中",
+      "management": "展示管理",
+      "devDep": "包括开发环境依赖",
+      "display": "展示方式",
+      "structure": "模块结构",
+      "circular": "循环依赖",
+      "duplicated": "重复依赖"
+    },
+    "module": {
+      "title": "依赖",
+      "information": "依赖信息",
+      "description": "简介",
+      "size": "自身大小 / 依赖大小",
+      "graph": "体积图表",
+      "source": "数据源",
+      "cache": "相同依赖",
+      "dependencies": "依赖个数 / 总依赖个数",
+      "circlePath": "循环依赖"
+    }
+  },
+  "skeleton": {
+    "tip": "加载中，请耐心等待 😇"
+  },
+  "static": {
+    "sidebar": {
+      "choose": {
+        "global": "全局",
+        "select": "选中"
+      },
+      "select": {
+        "export": {
+          "remove": "移除的导出",
+          "render": "加载的导出",
+          "changed": "变更的导出",
+          "noRemove": "没有移除的导出...",
+          "noRender": "没有加载的导出...",
+          "noChanged": "没有变更的导出..."
+        },
+        "import": {
+          "changed": "变更的导入",
+          "noChanged": "没有变更的导入..."
+        }
+      },
+      "global": {
+        "count": "当前数量",
+        "noGit": "暂无 Git 变动文件",
+        "noImport": "暂无 导入 变动文件"
+      }
+    },
+    "gitChanged": "Git 变更",
+    "importChanged": "导入变更"
+  }
+}

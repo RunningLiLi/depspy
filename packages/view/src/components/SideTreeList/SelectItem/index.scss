@@ -1,0 +1,30 @@
+.select-list-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3vh;
+  overflow: hidden;
+  user-select: none;
+
+  .treelist-selected-arc {
+    width: 0;
+    height: 0;
+    margin-right: 0.4rem;
+    border-top: 0.4rem solid transparent;
+    border-bottom: 0.4rem solid transparent;
+    border-left: 0.4rem solid;
+    transition: 0.2s;
+  }
+
+  .treelist-selected-name {
+    margin-left: 0.4rem;
+    overflow: hidden;
+    font-size: 1.2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.select-list-item:hover {
+  background-color: #e6e6e6;
+}

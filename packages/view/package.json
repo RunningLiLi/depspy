@@ -1,0 +1,72 @@
+{
+  "name": "@dep-spy/view",
+  "version": "3.2.7",
+  "description": "",
+  "main": "./dist/tsup/index.js",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/tsup/index.mjs",
+      "require": "./dist/tsup/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:vite && npm run build:tsup && npm run build:inject",
+    "build:vite": "vite build --mode offline",
+    "build:tsup": "tsup",
+    "build:online": "vite build --mode online",
+    "build:inject": "vite build --mode inject",
+    "tsup-build": "tsup --watch",
+    "vite-build": "vite build --watch",
+    "vite-static": "cross-env VITE_STATIC=static vite build",
+    "lint": "npx --no -- lint-staged",
+    "lint:script": "eslint --ext .ts,.tsx,.js,.jsx --fix ./",
+    "lint:style": "stylelint --fix \"./src/**/*.{css,scss}\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.1.20",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
+    "@unocss/preset-attributify": "^0.55.2",
+    "@unocss/transformer-variant-group": "^0.55.2",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "sass": "^1.65.1",
+    "tsup": "^7.1.0",
+    "unocss": "^0.55.2",
+    "vite-plugin-singlefile": "^2.1.0"
+  },
+  "dependencies": {
+    "@antv/g6": "^4.8.24",
+    "@dep-spy/core": "workspace:^",
+    "@dep-spy/utils": "workspace:^",
+    "@types/d3": "^7.4.0",
+    "@vitejs/plugin-react": "^4.0.4",
+    "d3": "^7.8.5",
+    "i18next": "^23.4.4",
+    "lodash-es": "^4.17.21",
+    "react": "^18.2.0",
+    "react-autosuggest": "^10.1.0",
+    "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
+    "react-i18next": "^13.1.2",
+    "react-router-dom": "^6.14.2",
+    "react-transition-group": "^4.4.5",
+    "save-svg-as-png": "^1.4.17",
+    "vite": "^4.4.9",
+    "zustand": "^4.4.0"
+  },
+  "gitHead": "50c073c23fc0eed9ed09baaa47244288326bc3d8"
+}
